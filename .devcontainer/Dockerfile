@@ -45,6 +45,10 @@ RUN sudo curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -o rust-init.
     sudo tar -xvf sccache-v0.3.3-x86_64-unknown-linux-musl.tar.gz && \
     sudo mv sccache-v0.3.3-x86_64-unknown-linux-musl/sccache /usr/bin && \
     sudo chmod +x /usr/bin/sccache && \
+    sudo wget https://github.com/rui314/mold/releases/download/v1.7.1/mold-1.7.1-x86_64-linux.tar.gz && \
+    sudo tar -xvf mold-1.7.1-x86_64-linux.tar.gz && \
+    sudo chmod -R +x mold-1.7.1-x86_64-linux/bin/* && \
+    sudo cp -r mold-1.7.1-x86_64-linux/** /usr && \
     curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - && \
     sudo apt-get install -y --no-install-recommends nodejs && \
     sudo npm install -g yarn
